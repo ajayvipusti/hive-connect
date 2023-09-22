@@ -2,7 +2,7 @@
 import { useRouter } from 'next/navigation';
 
 import Head from 'next/head';
-import 'hive/styles/login.css';
+import 'hive/styles/signup.css';
 import Image from 'next/image';
 import hive from 'hive/pages/hive.png';
 import Link from 'next/link';

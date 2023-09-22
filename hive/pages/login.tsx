@@ -39,8 +39,23 @@ export default function LoginPage() {
           <form onSubmit={handleLogin}>
             <h1>Hive Sign In</h1>
 
-            <input type="text" placeholder="Username" name="username" />
-            <input type="password" placeholder="Password" name="password" />
+            <input
+              type="text"
+              placeholder="Username"
+              name="username"
+              className="int"
+            />
+            <input
+              type="password"
+              placeholder="Password"
+              name="password"
+              className="int"
+            />
+            <div style={{ display: 'flex', marginTop: '5px' }}>
+              <input type="checkbox" />
+              <label htmlFor="vehicle1"> Remember me</label>
+            </div>
+
             <a href="#">Forgot your password?</a>
 
             <button style={{ cursor: 'pointer' }}>Sign In</button>
