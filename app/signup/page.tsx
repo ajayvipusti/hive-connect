@@ -1,28 +1,27 @@
 'use client';
-import { AuthService } from '../services/auth.service';
 import { useRouter } from 'next/navigation';
-import '../styles/globals.css';
+
 import Head from 'next/head';
-import '../styles/login.css';
+import 'hive/styles/login.css';
 import Image from 'next/image';
-import hive from './hive.png';
+import hive from 'hive/pages/hive.png';
 import Link from 'next/link';
 
-export default function LoginPage() {
-  const authService = new AuthService();
+export default function SignUpPage() {
+  //   const authService = new AuthService();
   const router = useRouter();
 
-  const handleLogin = (e: any) => {
-    e.preventDefault();
-    const username = e.target.username.value;
-    const password = e.target.password.value;
+  //   const handleLogin = (e: any) => {
+  //     e.preventDefault();
+  //     const username = e.target.username.value;
+  //     const password = e.target.password.value;
 
-    if (authService.login(username, password)) {
-      router.push('/dashboard');
-    } else {
-      alert('Invalid credentials');
-    }
-  };
+  //     if (authService.login(username, password)) {
+  //       router.push('/dashboard');
+  //     } else {
+  //       alert('Invalid credentials');
+  //     }
+  //   };
 
   return (
     <main className="main-log">
@@ -36,18 +35,19 @@ export default function LoginPage() {
 
       <div className="container" id="container">
         <div className="form-container log-in-container">
-          <form onSubmit={handleLogin}>
-            <h1>Hive Sign In</h1>
+          <form>
+            <h1>Hive Sign Up</h1>
 
             <input type="text" placeholder="Username" name="username" />
             <input type="password" placeholder="Password" name="password" />
-            <a href="#">Forgot your password?</a>
+            <input type="email" placeholder="Email" name="mail" />
+            <input type="tel" placeholder="Mobile Number" name="mob" />
 
-            <button style={{ cursor: 'pointer' }}>Sign In</button>
+            <button style={{ cursor: 'pointer' }}>Sign Up</button>
 
-            <Link href="/signup">
-              <span>Don't Have an Account ?</span>{' '}
-              <span style={{ fontWeight: 'bold' }}>Sign Up</span>
+            <Link href="/">
+              <span>Already Have an Account ?</span>{' '}
+              <span style={{ fontWeight: 'bold' }}>Sign In</span>
             </Link>
           </form>
         </div>

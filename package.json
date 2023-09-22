@@ -16,6 +16,7 @@
     "tslib": "^2.3.0"
   },
   "devDependencies": {
+    "@nrwl/storybook": "^16.8.1",
     "@nx/cypress": "16.8.1",
     "@nx/eslint-plugin": "16.8.1",
     "@nx/jest": "16.8.1",
@@ -24,11 +25,11 @@
     "@nx/react": "16.8.1",
     "@nx/storybook": "^16.8.1",
     "@nx/workspace": "16.8.1",
-    "@storybook/addon-essentials": "^7.2.1",
+    "@storybook/addon-essentials": "7.4.3",
     "@storybook/addon-interactions": "^7.2.1",
-    "@storybook/core-server": "^7.2.1",
+    "@storybook/core-server": "7.4.3",
     "@storybook/jest": "~0.1.0",
-    "@storybook/nextjs": "^7.2.1",
+    "@storybook/nextjs": "7.4.3",
     "@storybook/test-runner": "^0.13.0",
     "@storybook/testing-library": "~0.2.0",
     "@testing-library/react": "14.0.0",
