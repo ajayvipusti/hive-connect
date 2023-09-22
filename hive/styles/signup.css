@@ -63,7 +63,7 @@ form {
   text-align: center;
 }
 
-input {
+.int {
   background-color: #eee;
   border: none;
   padding: 12px 15px;

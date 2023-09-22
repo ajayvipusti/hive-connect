@@ -36,9 +36,8 @@
     "**/*.js",
     "**/*.jsx",
     ".next/types/**/*.ts",
-    "dist/hive/.next/types/**/*.ts",
-    "next-env.d.ts",
-    "../hive/.next/types/**/*.ts"
+    "dist/org/.next/types/**/*.ts",
+    "next-env.d.ts"
   ],
   "exclude": [
     "node_modules",
@@ -47,18 +46,6 @@
     "src/**/*.spec.ts",
     "src/**/*.test.ts",
     "**e2e/**/*",
-    "dist/hive/**/*",
-    "**/*.stories.ts",
-    "**/*.stories.js"
-  ],
-  "ts-node": {
-    "compilerOptions": {
-      "module": "commonjs"
-    }
-  },
-  "references": [
-    {
-      "path": "./tsconfig.storybook.json"
-    }
+    "dist/org/**/*"
   ]
 }

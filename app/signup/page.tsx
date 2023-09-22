@@ -4,7 +4,7 @@ import { useRouter } from 'next/navigation';
 import Head from 'next/head';
 import 'hive/styles/signup.css';
 import Image from 'next/image';
-import hive from 'hive/pages/hive.png';
+import hive from 'hive/pages/hive.jpeg';
 import Link from 'next/link';
 
 export default function SignUpPage() {
@@ -38,10 +38,30 @@ export default function SignUpPage() {
           <form>
             <h1>Hive Sign Up</h1>
 
-            <input type="text" placeholder="Username" name="username" />
-            <input type="password" placeholder="Password" name="password" />
-            <input type="email" placeholder="Email" name="mail" />
-            <input type="tel" placeholder="Mobile Number" name="mob" />
+            <input
+              type="text"
+              placeholder="Username"
+              name="username"
+              className="int"
+            />
+            <input
+              type="password"
+              placeholder="Password"
+              name="password"
+              className="int"
+            />
+            <input
+              type="email"
+              placeholder="Email"
+              name="mail"
+              className="int"
+            />
+            <input
+              type="tel"
+              placeholder="Mobile Number"
+              name="mob"
+              className="int"
+            />
 
             <button style={{ cursor: 'pointer' }}>Sign Up</button>
 

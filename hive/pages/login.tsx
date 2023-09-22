@@ -5,7 +5,7 @@ import '../styles/globals.css';
 import Head from 'next/head';
 import '../styles/login.css';
 import Image from 'next/image';
-import hive from './hive.png';
+import hive from './hive.jpeg';
 import Link from 'next/link';
 
 export default function LoginPage() {
