@@ -1,5 +1,4 @@
 'use client';
-import { AuthService } from '../services/auth.service';
 import { useRouter } from 'next/navigation';
 import '../styles/globals.css';
 import Head from 'next/head';
@@ -10,7 +9,6 @@ import Link from 'next/link';
 import { ApiService } from '../services/api.service';
 
 export default function LoginPage() {
-  const authService = new AuthService();
   const router = useRouter();
 
   const apiService = new ApiService();
@@ -38,12 +36,6 @@ export default function LoginPage() {
         console.error('Error:', error);
         alert('Invalid credentials');
       });
-
-    // if (authService.login(username, password)) {
-    //   router.push('/dashboard');
-    // } else {
-    //   alert('Invalid credentials');
-    // }
   };
 
   return (
