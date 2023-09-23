@@ -1,6 +1,8 @@
 import { InterceptorService } from './interceptor.service';
 import { ExceptionService } from './exception.service';
 
+const accessToken: any = localStorage.getItem('accessToken');
+
 export class ApiService {
   private interceptor = new InterceptorService();
   private exceptionHandler = new ExceptionService();
@@ -28,6 +30,7 @@ export class ApiService {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
+          Authorization: `Bearer ${accessToken}`,
         },
         body: JSON.stringify(requestBody),
       });

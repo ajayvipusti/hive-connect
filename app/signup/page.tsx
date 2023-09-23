@@ -1,5 +1,6 @@
 'use client';
 import { useRouter } from 'next/navigation';
+import { useState } from 'react';
 
 import Head from 'next/head';
 import 'hive/styles/signup.css';
@@ -7,8 +8,40 @@ import Image from 'next/image';
 import hive from 'hive/pages/hive.jpeg';
 import Link from 'next/link';
 
+import { ApiService } from 'hive/services/api.service';
+
 export default function SignUpPage() {
   const router = useRouter();
+  const apiService = new ApiService();
+  const [isAdmin, setIsAdmin] = useState(false);
+
+  const apiUrl =
+    'http://4.224.242.223:8083/api/v1/supplierportal/user/RegisterUsers';
+
+  const handleSignUp = (e: any) => {
+    e.preventDefault();
+    const username = e.target.username.value;
+    const password = e.target.password.value;
+    const email = e.target.mail.value;
+
+    const requestData = {
+      username: username,
+      password: password,
+      email: email,
+      isAdmin: isAdmin,
+    };
+
+    apiService
+      .PostData(apiUrl, requestData)
+      .then((data) => {
+        console.log('Response:', data);
+        router.push('/');
+      })
+      .catch((error) => {
+        console.error('Error:', error);
+        alert('Something Went Wrong !');
+      });
+  };
 
   return (
     <main className="main-log">
@@ -22,7 +55,7 @@ export default function SignUpPage() {
 
       <div className="container" id="container">
         <div className="form-container log-in-container">
-          <form>
+          <form onSubmit={handleSignUp}>
             <h1>Hive Sign Up</h1>
 
             <input
@@ -43,12 +76,14 @@ export default function SignUpPage() {
               name="mail"
               className="int"
             />
-            <input
-              type="tel"
-              placeholder="Mobile Number"
-              name="mob"
-              className="int"
-            />
+
+            <div style={{ marginTop: '15px', marginBottom: '15px' }}>
+              <span style={{ fontWeight: 'bold' }}>Is Admin</span>
+              <label className="switch" style={{ marginLeft: '10px' }}>
+                <input type="checkbox" onChange={() => setIsAdmin(true)} />
+                <span className="slider round"></span>
+              </label>
+            </div>
 
             <button style={{ cursor: 'pointer' }}>Sign Up</button>
 

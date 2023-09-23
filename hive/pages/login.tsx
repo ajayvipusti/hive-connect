@@ -29,6 +29,7 @@ export default function LoginPage() {
       .PostData(apiUrl, requestData)
       .then((data) => {
         console.log('Response:', data);
+        localStorage.setItem('accessToken', data.data.accessToken);
         router.push('/dashboard');
       })
       .catch((error) => {
