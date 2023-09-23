@@ -22,4 +22,25 @@ export class ApiService {
       this.exceptionHandler.handle(error as Error);
     }
   }
+
+
+  async PostLogin(url: string, requestBody: Record<string, any>) {
+    try {
+      const modifiedRequest = this.interceptor.intercept({
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(requestBody) 
+      });
+      const response = await fetch(url, modifiedRequest);
+      if (!response.ok) {
+        throw new Error(`HTTP error! Status: ${response.status}`);
+      }
+      const data = await response.json();
+      return data;
+    } catch (error) {
+      this.exceptionHandler.handle(error as Error);
+    }
+  }
 }

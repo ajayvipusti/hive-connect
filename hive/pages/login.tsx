@@ -7,21 +7,43 @@ import '../styles/login.css';
 import Image from 'next/image';
 import hive from './hive.jpeg';
 import Link from 'next/link';
+import { ApiService } from '../services/api.service';
 
 export default function LoginPage() {
   const authService = new AuthService();
   const router = useRouter();
+
+  const apiService = new ApiService();
+
+  const apiUrl =
+    'http://4.224.242.223:8083/api/v1/supplierportal/user/UsersLogin';
 
   const handleLogin = (e: any) => {
     e.preventDefault();
     const username = e.target.username.value;
     const password = e.target.password.value;
 
-    if (authService.login(username, password)) {
-      router.push('/dashboard');
-    } else {
-      alert('Invalid credentials');
-    }
+    const requestData = {
+      username: username,
+      password: password,
+    };
+
+    apiService
+      .PostLogin(apiUrl, requestData)
+      .then((data) => {
+        console.log('Response:', data);
+        router.push('/dashboard');
+      })
+      .catch((error) => {
+        console.error('Error:', error);
+        alert('Invalid credentials');
+      });
+
+    // if (authService.login(username, password)) {
+    //   router.push('/dashboard');
+    // } else {
+    //   alert('Invalid credentials');
+    // }
   };
 
   return (
