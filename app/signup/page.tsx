@@ -8,20 +8,7 @@ import hive from 'hive/pages/hive.jpeg';
 import Link from 'next/link';
 
 export default function SignUpPage() {
-  //   const authService = new AuthService();
   const router = useRouter();
-
-  //   const handleLogin = (e: any) => {
-  //     e.preventDefault();
-  //     const username = e.target.username.value;
-  //     const password = e.target.password.value;
-
-  //     if (authService.login(username, password)) {
-  //       router.push('/dashboard');
-  //     } else {
-  //       alert('Invalid credentials');
-  //     }
-  //   };
 
   return (
     <main className="main-log">

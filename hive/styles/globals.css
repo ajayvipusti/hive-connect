@@ -35,3 +35,7 @@
   padding: 0px 5px 0px 5px;
   background-color: azure;
 }
+
+body::-webkit-scrollbar {
+  display: none;
+}

@@ -13,6 +13,7 @@
   font-family: 'Montserrat', sans-serif;
   height: 100vh;
   margin: -20px 0 50px;
+  overflow-y: hidden !important;
 }
 
 h1 {
@@ -146,4 +147,8 @@ form {
   margin: 0 5px;
   height: 40px;
   width: 40px;
+}
+
+body::-webkit-scrollbar {
+  display: none;
 }

@@ -1,6 +1,5 @@
 'use client';
 import { useRouter } from 'next/navigation';
-import '../styles/globals.css';
 import Head from 'next/head';
 import '../styles/login.css';
 import Image from 'next/image';
@@ -27,7 +26,7 @@ export default function LoginPage() {
     };
 
     apiService
-      .PostLogin(apiUrl, requestData)
+      .PostData(apiUrl, requestData)
       .then((data) => {
         console.log('Response:', data);
         router.push('/dashboard');
